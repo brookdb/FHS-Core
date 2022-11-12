@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Habesha Film Association
+{% endblock %}
+
+{% block content %}
+  <div class="hero">
+    <div class="image-container-1">
+      <img src="media/main/img/HFA_official_Logo.webp" alt="">
+    </div>
+    <div class="hero-text-container">
+      <img src="media/main/img/HFA_Tag.webp" alt="">
+    </div>
+  </div>
+  <section>
+    <div class="statment">
+      <h1 class="statment-title">Mission statement</h1>
+      <p>Established on March 4th 2020 by four filmmakers in Los Angeles, the Habesha Film Association is a non-profit organization that aims to bridge the gap between the Horn of Africa and the global community by creating an open network of professionals in the film industry. It supports and promotes film professionals largely by providing essential resources with an access to a large network of like-minded professionals in creating visuals that positively promote the Horn of Africa diaspora along with organizing networking events across the country and around the globe.</p>
+    </div>
+  </section>
+  <section>
+    {% include 'core/components/slide_show.html'%}
+  </section>
+
+
+
+{% endblock %}

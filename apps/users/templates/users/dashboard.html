@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <form class="customForm" action="index.html" method="POST">
+    {% csrf_token %}
+    <div class="column-1 column">
+      <!-- Top part -->
+      <section>
+        <div class="column-2 column">
+          <section class="customForm-group">
+            <div class="profile-img">
+              <img src="{{ profile.avatar.url }}" alt="{{ user.first_name }} {{ user.last_name }}">
+            </div>
+            <label>Change profile image: </label>
+            {{ profile_form.avatar }}
+          </section>
+          <section>
+            <p>Roles</p>
+          </section>
+          <section>
+            Genres:
+          </section>
+        </div>
+        <div class="column-2 column">
+          <section class="customForm-group">
+            <label class="small mb-1">First name:</label>
+                {{ user_form.first_name }}
+            <label class="small mb-1">Last name:</label>
+                {{ user_form.last_name }}
+          </section>
+          <section class="customForm-group">
+            <label class="small mb-1">Email:</label>
+            {{ user.email }}
+          </section>
+          <section class="customForm-group">
+            <label class="small mb-1">Location:</label>
+            {{ profile_form.location }}
+          </section>
+          <section class="customForm-group">
+            <label class="small mb-1">Social Links:</label>
+          </section>
+
+        </div>
+      </section>
+
+      <!-- Bottom part -->
+      <section>
+        <div class="column-1 column">
+          <section class="customForm-group">
+            <label class="small mb-1">Inspo:</label>
+            {{ profile_form.inspo }}
+          </section>
+          <section class="customForm-group">
+            <label class="small mb-1">Bio:</label>
+            {{ profile_form.bio }}
+          </section>
+          <section>
+            <label class="small mb-1">Reels/Stills:</label>
+          </section>
+        </div>
+      </section>
+      <section>
+        <div class="column-4 column customForm-button-group">
+          <button type="submit" class="customForm-button btn btn-dark btn-lg">Save Changes</button>
+          <button type="reset" class="customForm-button btn btn-dark btn-lg">Reset</button>
+        </div>
+      </section>
+    </div>
+  </form>
+</section>
+{% endblock %}

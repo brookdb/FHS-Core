@@ -1,0 +1,109 @@
+.footer{
+  &-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 22.2px 22.2px 55.5px 22.2px;
+    background: @dark-background;
+    color: @light-foreground;
+    align-items: center;
+    .block{
+      display: flex;
+    }
+    @media only screen and (max-width: @mobile-min){
+      .block{
+        flex-direction: column;
+      }
+    }
+    @media only screen and (min-width: @desktop-min){
+      .block{
+        width: 969px;
+      }
+      .column{
+        &-three{
+          flex: 44% 0 0;
+        }
+        &-two{
+          flex: 296px 1 1;
+        }
+      }
+    }
+
+  }
+  &-appeal{
+    padding-bottom: 44.4px;
+    p,a {
+      font-family: 'Inconsolata';
+      font-size: 33.3px;
+    }
+  }
+
+  &-bio{
+    display: flex;
+    @media only screen and (max-width: @mobile-min){
+      flex-direction: column;
+    }
+
+    &-image{
+      width: 100%;
+      &-container{
+        width: 111.111px;
+        flex: 33.33% 0 0;
+        @media only screen and (max-width: @mobile-min){
+          lex: none;
+          width: 100%;
+          padding-bottom: 24px;
+        }
+      }
+    }
+    &-text{
+      padding: 0 20px;
+      color: @lavender;
+      font-family: 'Roboto Mono', monospace;
+      font-size: calc(8.88pt + .22vw);
+      @media only screen and (max-width: @mobile-min){
+        font-size: calc(8.88pt + 1.88vw);
+        padding: 0;
+      }
+    }
+  }
+
+  &-social{
+    &-wrapper{
+      display: flex;
+      justify-content: space-evenly;
+      padding: 5.55px 5.55px 33.3px 5.55px;
+
+      a {
+        .icon {
+          fill: @melon;
+          width: 33px;
+          height: 33px;
+          &:hover, &:active{
+            fill: @light-foreground;
+          }
+        }
+      }
+    }
+  }
+  &-legal{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 33.3px 0px;
+    a {
+      padding: 0px 11.1px;
+      &:first-of-type {
+        border-right: solid 2px;
+      }
+    }
+  }
+  &-credits{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 11.1px 0px 44.4px 0px;
+    border-top: solid 0.4px @melon;
+  }
+}

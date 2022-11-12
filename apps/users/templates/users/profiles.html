@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="search-control">
+
+    <div class="search-bar-container ">
+      <form class="search-bar-form" action="">
+        <input
+          class="search-bar-textfield"
+          type="text"
+          name="search"
+          placeholder="search by name or role"
+          value="{{request.GET.title}}"
+        />
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="profiles">
+    {% for profile in profiles %}
+      {% if profile.is_paid_member %}
+        <div class="profile">
+          <div class="profile-img">
+            <img src="{{ profile.avatar.url }}" alt="{{ profile.user.first_name }} {{ profile.user.last_name }}">
+          </div>
+          <div class="profile-text">
+            <h2> <a href="{% url 'apps.users:member_profile' user=profile.user.id %}">{{ profile.user.first_name }} {{ profile.user.last_name }}</a> </h2>
+            <p><b>{{ profile.location }}</b></p>
+            <p>{{ profile.bio|slice:"0:200" }}</p>
+            <p><a href="{% url 'apps.users:member_profile' user=profile.user.id %}">Read More</a></p>
+          </div>
+        </div>
+      {% endif %}
+    {% empty %}
+      <h2 class="search-errors">No results found. Try again.</h2>
+    {% endfor %}
+
+  </div>
+
+  <br>
+  <br>
+
+  {% endblock %}

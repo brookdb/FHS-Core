@@ -1,0 +1,23 @@
+<div class="slideshow-wrapper">
+  <br>
+  <h1>{{title}}</h1>
+  <div class="profiles">
+    {% for profile in profiles %}
+      {% if profile.is_leadership %}
+        <div class="mySlides fade profile">
+          <div class="slideshow-image-wrapper">
+            <img class="profile-image" src="{{ profile.avatar.url }}" alt="{{ profile.name }}">
+          </div>
+          <div class="profile-text">
+            <h2>{{profile.user.first_name}} {{profile.user.last_name}}</h2>
+            <p><b>Location: {{ profile.location }}</b></p>
+            <p>{{profile.bio | slice:"0:200"}} ... <a href="{% url 'apps.users:member_profile' user=profile.user.id %}">Read More</a></p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor%}
+  </div>
+  <br>
+
+
+</div>

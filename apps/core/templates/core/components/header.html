@@ -1,0 +1,32 @@
+<header class="warapper">
+  <h1><a href="{% url 'landing' %}">Habesha Film Association</a></h1>
+  <nav>
+    <ul>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="{% url 'apps.users:members' %}">MEMBERS</a></li>
+      <!-- a href="#">REOURCE</a -->
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'apps.users:dashboard' user.id %}">PROFILE</a></li>
+      <li>
+        <form class="logout-link" action="{% url 'apps.users:logout' %}" method="post">
+        {% csrf_token %}
+        <button class="customForm-button" type="submit">Logout</button>
+        </form>
+      </li>
+      {% else %}
+      <div class="wrapper">
+        <li><a class="customForm-button" href="{% url 'apps.users:login' %}">Login</a></li>
+        <li><a class="customForm-button" href="{% url 'apps.users:signup' %}">Signup</a></li>
+      </div>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="hamburger-icon" id="navbar-toggle" onclick="toggleMobileMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+      <ul class="mobile-menu">
+
+      </ul>
+  </div>
+</header>

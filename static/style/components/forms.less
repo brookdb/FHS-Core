@@ -1,0 +1,102 @@
+.customForm {
+  color: @dark-foreground;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Mono', monospace;
+  label{
+    font-family: 'Roboto Mono', monospace;
+    margin: 7.77px 0 3.3px 0;
+    margin-bottom: 10px;
+  }
+  ul{
+    padding: none;
+  }
+  li{
+    font-size: 11px;
+    line-height: 0.999em;
+    font-family: 'Roboto Mono', monospace;
+  }
+  input{
+    margin-bottom: 3.33px;
+    margin-bottom: 10px;
+    font-family:inherit;
+    font-size: inherit;
+  }
+  &-group{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: solid 0.4px;
+  }
+  &-title{
+    font-family: 'DispoDroid';
+  }
+  &-wrapper{
+    color: @lavender;
+    max-width: 222px;
+    margin: 0 auto;
+    padding: 26.66px;
+    &-edit{
+      max-width: 70vw;
+      width: 70vw;
+      color: @lavender;
+      margin: 0 auto;
+      padding: 26.66px;
+    }
+  }
+  &-form
+  {
+
+
+  }
+  &-button{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2em;
+    max-width: 200px;
+    color: @lavender;
+    background: @cerulean;
+    cursor: pointer;
+    &:hover, &:active{
+      text-decoration: underline;
+    }
+    &-group{
+
+    }
+  }
+  &-link {
+    color: @lavender !important;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &-textarea{
+    width: calc(80vw - 10px);
+    background: @light-foreground;
+  }
+  &-fileinput{
+    button{
+      ont-family: 'Roboto Mono', monospace;
+      font-size: 1.2em;
+      max-width: 200px;
+      color: @lavender;
+      background: @cerulean;
+      cursor: pointer;
+      &:hover, &:active{
+        text-decoration: underline;
+      }
+    }
+  }
+  .profile-img{
+    padding: 20px;
+  }
+
+
+}
+
+.deactivate-account{
+  &-form{
+    p,label {
+      color: @uber-black;
+    }
+  }
+}
